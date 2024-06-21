@@ -142,8 +142,14 @@ if __name__ == '__main__':
     src_root = './Datasets_2'
     bg_root = './bg'
     dataset_root = './dataset'
-    create_num = int(360/10)*160*2  # 每类都创建n个图片
-    create_data(dataset_root, 100, src_root, bg_root, 128, 128, initial_code=20)
+    # create_num = int(360/10)*160*2  # 每类都创建n个图片
+    create_data(dataset_root,   # 生成的数据集在这个文件夹
+                10, # 每类图片生成的数量
+                src_root,   # 官方数据集
+                bg_root,    # 背景文件夹路径
+                128, 128,   # 生成图片尺寸
+                initial_code=0  # dataset里原本有的图片数量（每类）
+                )
     # create_data(dataset_root, 10, src_root, bg_root, 128, 128, initial_code=0, use_augm=True)
     # gen = generate_img(src_paths[0][0], bg_paths[0], 80, 80)
     # cv2.imshow('gen', gen)
